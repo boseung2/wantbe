@@ -1,5 +1,8 @@
-import "./globals.css";
-import Chakra from "./components/Chakra";
+"use client";
+
+import ChakraUI from "@/config/ChakraUI";
+import { ApolloProvider } from "@apollo/client";
+import client from "../config/apolloClient";
 
 export default function RootLayout({
   children,
@@ -14,7 +17,9 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <Chakra>{children}</Chakra>
+        <ApolloProvider client={client}>
+          <ChakraUI>{children}</ChakraUI>
+        </ApolloProvider>
       </body>
     </html>
   );

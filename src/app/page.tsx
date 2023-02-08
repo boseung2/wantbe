@@ -1,10 +1,14 @@
-import PrimaryButton from "./components/PrimaryButton";
+"use client";
+import FilmList from "@/components/film/FilmList";
+import { Box, Text } from "@chakra-ui/react";
 
 export default function Home() {
   return (
     <main>
-      <p>Hello Next 13</p>
-      <PrimaryButton />
+      <Box>
+        <Text>Ghibli GraphQL</Text>
+        <FilmList />
+      </Box>
     </main>
   );
 }
