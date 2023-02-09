@@ -2,7 +2,7 @@ import { ApolloClient } from "@apollo/client";
 import { createApolloCache } from "./createApolloCache";
 
 const client = new ApolloClient({
-  uri: "http://localhost:3000/graphql",
+  uri: "http://localhost:4000/graphql",
   cache: createApolloCache(),
 });
 
