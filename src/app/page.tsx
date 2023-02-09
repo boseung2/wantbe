@@ -1,12 +1,12 @@
 "use client";
 import FilmList from "@/components/film/FilmList";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 
 export default function Home() {
   return (
     <main>
       <Box>
-        <Text>Ghibli GraphQL</Text>
+        <Heading size="lg">최고의 장면을 찾아보세요</Heading>
         <FilmList />
       </Box>
     </main>

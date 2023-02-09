@@ -1,8 +1,9 @@
 "use client";
 
+import ComomnLayout from "@/components/layout/ComomnLayout";
 import ChakraUI from "@/config/ChakraUI";
 import { ApolloProvider } from "@apollo/client";
-import client from "../config/apolloClient";
+import client from "./apollo/apolloClient";
 
 export default function RootLayout({
   children,
@@ -18,7 +19,9 @@ export default function RootLayout({
       <head />
       <body>
         <ApolloProvider client={client}>
-          <ChakraUI>{children}</ChakraUI>
+          <ChakraUI>
+            <ComomnLayout>{children}</ComomnLayout>
+          </ChakraUI>
         </ApolloProvider>
       </body>
     </html>
