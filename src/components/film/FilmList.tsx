@@ -14,10 +14,6 @@ export default function FilmList() {
     },
   });
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   const skeleton = [0, 1, 2, 3, 4, 5].map((x) => (
     <Skeleton key={x} height="400px" />
   ));

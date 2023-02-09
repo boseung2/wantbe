@@ -8,8 +8,10 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  LinkOverlay,
 } from "@chakra-ui/react";
 import React from "react";
+import NextLink from "next/link";
 
 interface FilmCardProps {
   film: FilmsQuery["films"][0];
@@ -32,13 +34,15 @@ export default function FilmCard({ film }: FilmCardProps) {
           </AspectRatio>
         </Box>
         <Stack>
-          <Heading
-            color={useColorModeValue("gray.700", "white")}
-            fontSize="xl"
-            fontFamily="body"
-          >
-            {film.title}
-          </Heading>
+          <LinkOverlay as={NextLink} href={`/film/${film.id}`}>
+            <Heading
+              color={useColorModeValue("gray.700", "white")}
+              fontSize="xl"
+              fontFamily="body"
+            >
+              {film.title}
+            </Heading>
+          </LinkOverlay>
           <Text fontSize="sm" color="gray.500" isTruncated>
             {film.subtitle ? film.subtitle : <>&nbsp;</>}
           </Text>
