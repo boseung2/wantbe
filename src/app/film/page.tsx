@@ -1,8 +1,10 @@
 "use client";
+
 import FilmList from "@/components/film/FilmList";
 import { Box, Heading } from "@chakra-ui/react";
+import React from "react";
 
-export default function Home() {
+export default function page() {
   return (
     <main>
       <Box>
