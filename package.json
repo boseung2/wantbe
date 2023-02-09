@@ -5,7 +5,7 @@
   "scripts": {
     "build": "next build",
     "start": "next start",
-    "start:dev": "next dev -p 3001",
+    "start:dev": "next dev",
     "lint": "next lint",
     "codegen": "graphql-codegen --config codegen.yml"
   },
