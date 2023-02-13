@@ -14,7 +14,7 @@ import React from "react";
 import NextLink from "next/link";
 
 interface FilmCardProps {
-  film: FilmsQuery["films"][0];
+  film: FilmsQuery["films"]["films"][0];
 }
 
 export default function FilmCard({ film }: FilmCardProps) {
