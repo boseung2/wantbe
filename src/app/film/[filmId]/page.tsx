@@ -1,8 +1,9 @@
 "use client";
+import FilmCutModal from "@/components/film-cut/FilmCutModal";
 import FilmDetail from "@/components/film/FilmDetail";
 import { useFilmQuery } from "@/generated/graphql";
-import { Box, Spinner, Text } from "@chakra-ui/react";
-import React from "react";
+import { Box, Spinner, Text, useDisclosure } from "@chakra-ui/react";
+import React, { useState } from "react";
 import FilmCutList from "../../../components/film-cut/FilmCutList";
 
 interface PageParams {
@@ -18,6 +19,13 @@ export default function Page({ params }: PageParams) {
     },
   });
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [selectedCutId, setSelectedCutId] = useState<number>();
+  const handleCutSelect = (cutId: number) => {
+    setSelectedCutId(cutId);
+    onOpen();
+  };
+
   return (
     <main>
       {loading && <Spinner />}
@@ -26,10 +34,15 @@ export default function Page({ params }: PageParams) {
       {params.filmId && data?.film && (
         <>
           <FilmDetail film={data?.film} />
-          <Box mt={12} />
-          <FilmCutList filmId={data.film.id} />
+          <Box mt={12}>
+            <FilmCutList filmId={data.film.id} onClick={handleCutSelect} />
+          </Box>
         </>
       )}
+
+      {selectedCutId ? (
+        <FilmCutModal open={isOpen} onClose={onClose} cutId={selectedCutId} />
+      ) : null}
     </main>
   );
 }
