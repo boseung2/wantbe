@@ -1,6 +1,6 @@
 import { useFilmsQuery } from "@/generated/graphql";
 import { Box, SimpleGrid, Skeleton } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import React from "react";
 import { Waypoint } from "react-waypoint";
 import FilmCard from "./FilmCard";
 
@@ -15,7 +15,7 @@ export default function FilmList() {
   });
 
   const skeleton = [0, 1, 2, 3, 4, 5].map((x) => (
-    <Skeleton key={x} height="400px" />
+    <Skeleton key={x} height="400px" my={6} />
   ));
 
   const filmList =

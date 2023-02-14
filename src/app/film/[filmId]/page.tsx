@@ -27,7 +27,7 @@ export default function Page({ params }: PageParams) {
   };
 
   return (
-    <main>
+    <>
       {loading && <Spinner />}
       {error && <Text>페이지를 표시할 수 없습니다.</Text>}
 
@@ -43,6 +43,6 @@ export default function Page({ params }: PageParams) {
       {selectedCutId ? (
         <FilmCutModal open={isOpen} onClose={onClose} cutId={selectedCutId} />
       ) : null}
-    </main>
+    </>
   );
 }
