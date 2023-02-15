@@ -13,7 +13,8 @@ import { ColorModeSwitcher } from "../ColorModeSwitcher";
 import { useMeQuery } from "../../../generated/graphql";
 
 export default function NavBar() {
-  const accessToken = localStorage.getItem("access_token");
+  const accessToken =
+    typeof window !== "undefined" ? localStorage.getItem("access_token") : null;
   const { data } = useMeQuery({ skip: !accessToken });
   const isLoggedIn = useMemo(() => {
     if (accessToken) return data?.me?.id;
