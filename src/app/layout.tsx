@@ -1,8 +1,7 @@
 "use client";
-
-import client from "@/apollo/apolloClient";
 import ChakraUI from "@/config/ChakraUI";
 import { ApolloProvider } from "@apollo/client";
+import client from "@/apollo/apolloClient";
 
 export default function RootLayout({
   children,

@@ -1,9 +1,5 @@
-import { ApolloClient } from "@apollo/client";
-import { createApolloCache } from "./createApolloCache";
+import { createApolloClient } from "./createApolloClient";
 
-const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql",
-  cache: createApolloCache(),
-});
+const client = createApolloClient();
 
 export default client;

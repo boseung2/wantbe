@@ -19,7 +19,6 @@ import {
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import { SignUpInput } from "../../../../wantbe-api/src/users/resolver/users.resolver";
 
 export default function SignUpForm() {
   return (
@@ -54,8 +53,8 @@ function SignUpRealForm() {
   const router = useRouter();
   const toast = useToast();
 
-  const onSubmit = async (data: SignUpMutationVariables) => {
-    const { signUpInput } = data;
+  const onSubmit = async (formData: SignUpMutationVariables) => {
+    const { signUpInput } = formData;
     try {
       const res = await signUp({ variables: { signUpInput } });
       if (res.data?.signUp) {
